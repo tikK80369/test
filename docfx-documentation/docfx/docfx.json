@@ -1,0 +1,109 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "**/*.sln",
+            "**/*.csproj"
+          ],
+          "exclude": [
+            "**/bin/**",
+            "**/obj/**"
+          ],
+          "src": ".."
+        }
+      ],
+      "dest": "obj/api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "toc.yml",
+          "index.md",
+          "documents/**/*.yml",
+          "documents/**/*.md",
+          "obj/api/*",
+          "restapi/*.yml",
+          "restapi/*.json"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "**/**.jpg",
+          "**/**.png",
+          "**/*.pdf",
+          "template/favicon.ico"
+        ],
+        "exclude": [
+          "**/bin/**",
+          "**/obj/**"
+        ]
+      }
+    ],
+    "template": [
+      "default",
+      "template/material",
+      "DocFx.Plugins.PlantUml/template"
+    ],
+    "globalMetadata": {
+      "_appTitle": "aspnet on the cloud",
+      "_appFooter": "© 2020 Team Care.",
+      "_enableSearch": true,
+      "_disableContribution": false,
+      "_appLogoPath": "template/favicon.ico",
+      "_appFaviconPath": "template/logo.png"
+    },
+    "dest": "_site",
+    "disableGitFeatures": true,
+    "xrefService": [
+      "https://xref.docs.microsoft.com/query?uid={uid}"
+    ]
+  },
+  "pdf": {
+    "content": [
+      {
+        "files": "pdf/toc.yml"
+      },
+      {
+        "files": [
+          "obj/api/*.yml",
+          "documents/*.md",
+          "documents/*.yml",
+          "restapi/*.yml",
+          "restapi/*.json",
+          "pdf/*"
+        ],
+        "exclude": [
+          "**/bin/**",
+          "**/obj/**",
+          "**/toc.yml",
+          "**/toc.md"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "documents/images/**"
+        ],
+        "exclude": [
+          "**/bin/**",
+          "**/obj/**",
+          "_site_pdf/**"
+        ]
+      }
+    ],
+    "tocTitle": "目次",
+    "template": [
+      "pdf.default",
+      "template/material",
+      "DocFx.Plugins.PlantUml/template"
+    ],
+    "dest": "_site_pdf"
+  }
+}
